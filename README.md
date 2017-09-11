@@ -5,6 +5,7 @@ To run this project, open the entertainment_center.py python file in your IDE an
 should open
 
 If you do not have an IDE but you have python installed on your laptop:
+
 1- open your terminal
 
 2- navigate to the project directory
