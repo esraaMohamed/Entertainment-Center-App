@@ -19,6 +19,7 @@ main_page_head = '''
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            background-color : black;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -38,10 +39,25 @@ main_page_head = '''
         .movie-tile {
             margin-bottom: 20px;
             padding-top: 20px;
+            font-family: monospace;
+            color: #b3b3cc
         }
-        .movie-tile:hover {
-            background-color: #EEE;
+        .movie-tile:hover{
+            background-color: gray;
             cursor: pointer;
+        }
+        p {
+            text-align: justify;
+            width: 350px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .p:hover{
+            text-align: justify;
+            overflow: visible;
+            text-overflow:initial;
+            white-space: normal;
         }
         .scale-media {
             padding-bottom: 56.25%;
@@ -122,9 +138,11 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" 
+data-toggle="modal" data-target="#trailer">
+<h2>{movie_title}</h2>
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+    <p class="p">{story_line}</p>
 </div>
 '''
 
@@ -145,7 +163,8 @@ def create_movie_tiles_content(movies):
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            story_line = movie.storyline
         )
     return content
 
