@@ -89,7 +89,7 @@ despicable_me_3 = media.Movie(title="Despicable Me 3", duration_in_minutes=90,
                               release_date="30 June 2017",
                               rating="Parental Guidance Suggested")
 
-friends_last_episode = series.Series(title="The Last One", duration_in_minutes=22,
+friends_last_episode = series.Series(title="The Last One",
                                      trailer_url="https://www.youtube.com/watch?v=rivGNerDt6c",
                                      poster_image_url="https://i.pinimg.com/236x/46/8c/81/468c81d7750d07b29590017"
                                                       "b1dae69ec--last-episode-friends-forever.jpg",
@@ -97,7 +97,7 @@ friends_last_episode = series.Series(title="The Last One", duration_in_minutes=2
                                                "packing up the apartment.",
                                      release_date="6 May 2004")
 
-how_i_met_your_mother_last_episode = series.Series(title="Last Forever", duration_in_minutes=22,
+how_i_met_your_mother_last_episode = series.Series(title="Last Forever",
                                                    trailer_url="https://www.youtube.com/watch?v=AM9AqsEwZrA",
                                                    poster_image_url="https://images-na.ssl-images-amazon.com/images/"
                                                                     "M/MV5BMTQ4Nzg0Njk1M15BMl5BanBnXkFtZTgwMDQ5MDMyMj"
@@ -109,7 +109,7 @@ how_i_met_your_mother_last_episode = series.Series(title="Last Forever", duratio
                                                    release_date="31 March 2014")
 
 
-game_of_thrones_season_7_finale = series.Series(title="The Dragon and the Wolf", duration_in_minutes=81,
+game_of_thrones_season_7_finale = series.Series(title="The Dragon and the Wolf",
                                                 trailer_url="https://www.youtube.com/watch?v=-5xdTlgaaaw",
                                                 poster_image_url="https://images-na.ssl-images-amazon.com/images/M/MV5"
                                                                  "BOTMyM2UxZmMtMGI5My00NmEwLWI5OTMtMWQzNTU0NzgyYmEyXk"
