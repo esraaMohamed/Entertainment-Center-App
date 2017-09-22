@@ -13,9 +13,13 @@ class Series(Video):
     """
     this class has information about tv shows
     """
-    def __init__(self, title, trailer_url, poster_image_url, storyline, release_date):
-        Video.__init__(self, title=title, trailer_url=trailer_url, poster_image_url=poster_image_url,
-                       storyline=storyline, release_date=release_date)
+    def __init__(self, title, trailer_url, poster_image_url, storyline,
+                 release_date):
+        Video.__init__(self, title=title,
+                       trailer_url=trailer_url,
+                       poster_image_url=poster_image_url,
+                       storyline=storyline,
+                       release_date=release_date)
 
 
 

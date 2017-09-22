@@ -1,10 +1,12 @@
 # ud036_StarterCode
 Source code for a Movie Trailer website.
 
-To run this project, open the entertainment_center.py python file in your IDE and run it, the movies web page
+To run this project, open the entertainment_center.py python file in your 
+IDE and run it, the movies web page
 should open.
 
-To run the API version, open the entertainment_center_api.py file in your IDE and run it, the movies web page
+To run the API version, open the entertainment_center_api.py 
+file in your IDE and run it, the movies web page
 should open.
 
 The API used is https://www.themoviedb.org/?language=en
