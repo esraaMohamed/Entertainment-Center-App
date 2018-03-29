@@ -15,6 +15,14 @@ class Series(Video):
     """
     def __init__(self, title, trailer_url, poster_image_url, storyline,
                  release_date):
+        """
+        this method initializes the series object
+        :param title: the series title
+        :param trailer_url: the trailer url
+        :param poster_image_url: the poster of the series
+        :param storyline: the storyline of the episode
+        :param release_date: the release date of the series
+        """
         Video.__init__(self, title=title,
                        trailer_url=trailer_url,
                        poster_image_url=poster_image_url,

@@ -1,7 +1,6 @@
-import webbrowser
 import os
 import re
-
+import webbrowser
 
 # Styles and scripting for the page
 main_page_head = '''
@@ -10,10 +9,9 @@ main_page_head = '''
 <head>
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
-
     <!-- Bootstrap 3 -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/
-    3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/
+    bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/
     3.1.0/css/bootstrap-theme.min.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -45,8 +43,8 @@ main_page_head = '''
             font-family: monospace;
             color: #b3b3cc
         }
-        .movie-tile:hover{
-            background-color: gray;
+        .movie-tile:hover {
+            background-color: #EEE;
             cursor: pointer;
         }
         p {
@@ -81,15 +79,14 @@ main_page_head = '''
         $(document).on('click', '.hanging-close, .modal-backdrop, .modal', 
         function (event) {
             // Remove the src so the player itself gets removed, as this is 
-            the only
-            // reliable way to ensure the video stops playing in IE
+            // the only reliable way to ensure the video stops playing in IE
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId
-             + '?autoplay=1&html5=1';
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId 
+            + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>"
             , {
               'id': 'trailer-video',
@@ -108,7 +105,6 @@ main_page_head = '''
 </head>
 '''
 
-
 # The main page layout and title bar
 main_page_content = '''
   <body>
@@ -118,9 +114,8 @@ main_page_content = '''
         <div class="modal-content">
           <a href="#" class="hanging-close" data-dismiss="modal" 
           aria-hidden="true">
-            <img src=
-            "https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qk
-            NtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi
+            _MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
           </a>
           <div class="scale-media" id="trailer-video-container">
           </div>
@@ -145,20 +140,24 @@ main_page_content = '''
 </html>
 '''
 
-
 # A single movie entry html template
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" 
-data-trailer-youtube-id="{trailer_youtube_id}" 
-data-toggle="modal" data-target="#trailer">
-<h2>{movie_title}</h2>
+data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" 
+data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
+    <h2>{movie_title}</h2>
     <p class="p">{story_line}</p>
 </div>
 '''
 
 
 def create_movie_tiles_content(movies):
+    """
+    creates the movie tiles for the page
+    :param movies: the movies object
+    :return:
+    """
     # The HTML content for this section of the page
     content = ''
     for movie in movies:
@@ -175,12 +174,17 @@ def create_movie_tiles_content(movies):
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id,
-            story_line=movie.storyline.encode('utf-8')
+            story_line=movie.storyline
         )
     return content
 
 
 def open_movies_page(movies):
+    """
+    Open the movies page
+    :param movies: movies object
+    :return:
+    """
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
 

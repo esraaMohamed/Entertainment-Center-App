@@ -1,6 +1,7 @@
+import api_class
 import media
 import series
-import api_class
+
 """
 API calls from the api class 
 """
@@ -15,7 +16,7 @@ def get_movie_story_line(json_text):
 
 
 def get_movie_poster_url(json_text):
-    return "https://image.tmdb.org/t/p/w500/"+json_text["poster_path"]
+    return "https://image.tmdb.org/t/p/w500/" + json_text["poster_path"]
 
 
 def get_movie_release_date(json_text):
@@ -27,8 +28,8 @@ def get_movie_duration(json_text):
 
 
 def get_movie_youtube_trailer_link(json_text):
-    return "https://www.youtube.com/watch?v="+json_text["videos"]
-    ["results"][0]["key"]
+    return "https://www.youtube.com/watch?v=" + \
+           json_text["videos"]["results"][0]["key"]
 
 
 def get_movie_rating(movie_id):
@@ -131,4 +132,3 @@ def get_show_data(show_id, season_number, episode_number):
                          storyline=get_episode_storyline(episode_data),
                          release_date=get_episode_release_date(episode_data))
     return show
-

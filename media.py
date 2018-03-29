@@ -14,6 +14,16 @@ class Movie(Video):
     def __init__(self, title, duration_in_minutes, trailer_url,
                  poster_image_url,
                  storyline, release_date, rating):
+        """
+        This method initializes the movie object
+        :param title: The movie title
+        :param duration_in_minutes: the movie duration in minutes
+        :param trailer_url: the trailer url
+        :param poster_image_url: the poster of the movie
+        :param storyline: the movie storyline
+        :param release_date: the release date of the movie
+        :param rating: the movie rating
+        """
         Video.__init__(self, title=title,
                        trailer_url=trailer_url,
                        poster_image_url=poster_image_url,
